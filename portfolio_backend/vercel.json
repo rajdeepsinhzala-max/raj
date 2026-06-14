@@ -2,25 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "portfolio_backend/wsgi.py",
+      "src": "manage.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles"
-      }
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "staticfiles/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "portfolio_backend/wsgi.py"
+      "dest": "manage.py"
     }
   ]
 }
